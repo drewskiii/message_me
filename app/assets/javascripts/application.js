@@ -16,3 +16,10 @@
 //= require turbolinks
 //= require semantic-ui
 //= require_tree .
+
+// once turbolinks loads (dom loads), we can activate/initialize the dropdown
+$(document).on('turbolinks:load', function() {
+    $('.ui.dropdown')
+    .dropdown()
+  ;
+})
