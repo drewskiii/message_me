@@ -17,10 +17,19 @@
 //= require semantic-ui
 //= require_tree .
 
+scroll_bottom = function() {
+  if ($('#messages').length > 0) {
+    $('#messages').scrollTop($('#messages')[0].scrollHeight);
+  }
+
+}
+
+
 // once turbolinks loads (dom loads), we can activate/initialize the dropdown
 $(document).on('turbolinks:load', function() {
     $('.ui.dropdown').dropdown();
     $('.message .close').on('click', function() {
       $(this).closest('.message').transition('fade');
   });
+  scroll_bottom();  // scroll to bottom everytime a page loads
 })
