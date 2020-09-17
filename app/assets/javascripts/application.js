@@ -19,7 +19,8 @@
 
 // once turbolinks loads (dom loads), we can activate/initialize the dropdown
 $(document).on('turbolinks:load', function() {
-    $('.ui.dropdown')
-    .dropdown()
-  ;
+    $('.ui.dropdown').dropdown();
+    $('.message .close').on('click', function() {
+      $(this).closest('.message').transition('fade');
+  });
 })
